@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-export default function ImagePage() {
+export default function ImageSection() {
     return (
-        <div id="imagePage">
+        <div id="imagePage" className="py-9">
             <div className="bg-neutral-100">
                 <Image 
                     src={""}
