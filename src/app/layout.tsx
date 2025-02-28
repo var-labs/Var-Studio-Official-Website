@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { DM_Sans } from "next/font/google"
+import { DM_Sans } from "next/font/google";
 import Navigation from "@/components/nav";
 import { LenisProvider } from "@/context/LenisScroll";
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const dmSans = DM_Sans({
   display: "swap",
   subsets: ["latin"],
-})
+});
 
 export default function RootLayout({
   children,
@@ -22,22 +22,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/logo.png"/>
+        <link rel="icon" href="/logo.png" />
       </head>
-      <body
-        className={`font-dm-sans antialiased ${dmSans.className}`}
-      >
-        <nav className="px-[5rem]">
+      <body className={`antialiased ${dmSans.className}`}>
+        <nav>
           <Navigation />
         </nav>
         <main>
-          <LenisProvider>
-            {children}
-          </LenisProvider>
+          <LenisProvider>{children}</LenisProvider>
         </main>
-        <footer>
-
-        </footer>
+        <footer></footer>
       </body>
     </html>
   );

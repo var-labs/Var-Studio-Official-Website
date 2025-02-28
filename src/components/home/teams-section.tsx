@@ -37,8 +37,8 @@ export default function TeamSection() {
             </div>
 
             <div className="flex flex-col items-end mt-[6.3rem] gap-6 text-xl font-normal pb-[5.3rem]">
-                <span className="text-right w-[35%] text-neutral-500">Learn how our expertise transforms ideas into powerful digital solutions crafted for impact.</span>
-                <span className="uppercase text-right underline underline-offset-2">Discover Our Work!</span>
+                <span className="text-right w-[35%] text-neutral-500 leading-description">Learn how our expertise transforms ideas into powerful digital solutions crafted for impact.</span>
+                <span className="uppercase text-right underline underline-offset-2 tracking-button-link">Discover Our Work!</span>
             </div>
 
         </div>

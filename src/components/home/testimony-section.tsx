@@ -30,7 +30,7 @@ export default function TestimonySection() {
                 <span className="border border-neutral-900 w-9/12"></span>
                 <div className="text-neutral-500 flex justify-between w-full px-[1rem]">
                     <span className="text-xl -ml-16">1 - 5</span>
-                    <span className="text-medium leading-tight max-w-5xl uppercase">&quot;Var Studio transformed our vision into a stunning digital experience. Their attention to detail and creativity exceeded our expectations.&quot;</span>
+                    <span className="text-medium max-w-5xl uppercase leading-description">&quot;Var Studio transformed our vision into a stunning digital experience. Their attention to detail and creativity exceeded our expectations.&quot;</span>
                 </div>
             </div>
 

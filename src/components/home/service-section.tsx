@@ -36,7 +36,7 @@ export default function ServiceSection() {
                     <div className="absolute z-40 flex flex-col w-full h-full pr-[3.25rem] pt-[50px]">
                         <div className="flex flex-col gap-[5rem] mb-3 text-right items-end">
                             <span className="text-[52px] uppercase">Site build</span>
-                            <span className="text-neutral-500 max-w-lg text-xl">Building robust digital foundations with precision and innovation, empowering seamless interactions and lasting impact.</span>
+                            <span className="text-neutral-500 max-w-lg text-xl leading-description">Building robust digital foundations with precision and innovation, empowering seamless interactions and lasting impact.</span>
                         </div>
                         <div className="w-full h-full px-[54px] uppercase text-start text-xl underline underline-offset-2">
                         see more details!
@@ -63,7 +63,7 @@ export default function ServiceSection() {
                     <div className="absolute z-40 flex flex-col w-full h-full pl-[3.25rem] pt-[50px]">
                         <div className="flex flex-col gap-[5rem] mb-3 items-start">
                             <span className="text-[52px] uppercase">Site Design</span>
-                            <span className="text-neutral-500 max-w-lg text-xl">Shaping digital identities with captivating visuals and thoughtful design, creating experiences that connect and engage.</span>
+                            <span className="text-neutral-500 max-w-lg text-xl leading-description">Shaping digital identities with captivating visuals and thoughtful design, creating experiences that connect and engage.</span>
                         </div>
                         <div className="w-full h-full px-[54px] uppercase text-right text-xl underline underline-offset-2">
                         see more details!

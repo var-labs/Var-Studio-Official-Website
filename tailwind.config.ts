@@ -69,6 +69,12 @@ const config: Config = {
         background: "var(--background)",
         "background-black": "var(--backgroundblack)",
       },
+      lineHeight: {
+        description : "1.4",
+      },
+      letterSpacing: {
+        "button-link": "-2%",
+      }
     },
   },
   plugins: [],
