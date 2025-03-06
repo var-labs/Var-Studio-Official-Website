@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { motion } from "motion/react";
 
 export default function Navigation() {
     const [prevScroll, setPrevScroll] = useState(0);
@@ -14,7 +15,7 @@ export default function Navigation() {
         const handleScroll = () => {
             const currentScroll = window.scrollY;
             const isScrollingUp = prevScroll > currentScroll;
-            setVisible(isScrollingUp || currentScroll < 10);
+            setVisible(isScrollingUp || currentScroll < 150);
             setPrevScroll(currentScroll);
         }
         window.addEventListener("scroll", handleScroll);
@@ -28,11 +29,11 @@ export default function Navigation() {
     ];
 
     return (
-        <div className={`fixed top-0 w-full px-[5rem] mix-blend-difference backdrop-blur-[3px] z-50 transition-transform duration-500 ${
+        <div className={`fixed top-0 w-full px-[5rem] mix-blend-difference backdrop-blur-[3px] z-50 transition-transform duration-700 ${
         visible ? "translate-y-0" : "-translate-y-full"
         }`}>
             <div className="flex justify-between items-center select-none py-6">
-                <div className="flex items-center gap-3"
+                <div className="flex items-center gap-3 cursor-pointer"
                     onMouseEnter={() => setIsLogoHovered(true)}
                     onMouseLeave={() => setIsLogoHovered(false)}
                 >
@@ -49,30 +50,37 @@ export default function Navigation() {
                     </span>
                 </div>
 
-                <div className="flex items-center text-xl font-normal dm-sans text-neutral-0 group">
-                    {links.map((link, index) => (
-                        <React.Fragment key={index}>
-                        {index > 0 && (
-                            <span className={`transition-colors ${hoveredLinkIndex === index ? "text-neutral-500" : "text-neutral-0"} group-hover:text-neutral-500`}>
-                                ,
-                            </span>
-                        )}
-                        <Link
-                            href={link.href}
-                            className={
-                            hoveredLinkIndex === index 
-                                ? "text-neutral-0" 
-                                : isLogoHovered || (hoveredLinkIndex !== null && hoveredLinkIndex !== index) 
-                                ? "text-neutral-500" 
-                                : "text-neutral-0"
-                            }
-                            onMouseEnter={() => setHoveredLinkIndex(index)}
-                            onMouseLeave={() => setHoveredLinkIndex(null)}
-                        >
-                            {link.text}
-                        </Link>
-                        </React.Fragment>
-                    ))}
+                <div className="flex items-center text-xl font-normal text-neutral-500 group">
+                {links.map((link, index) => (
+                    <React.Fragment key={index}>
+                    {index > 0 && (
+                        <span className={`transition-colors duration-300 ease-in-out ${
+                        hoveredLinkIndex === index || isLogoHovered ? "text-neutral-500" : "text-neutral-0"
+                        } group-hover:text-neutral-500`}>
+                        ,
+                        </span>
+                    )}
+                    <Link
+                        href={link.href}
+                        className={`relative transition-colors duration-300 ease-in-out ${
+                        hoveredLinkIndex === index 
+                            ? "text-neutral-0" 
+                            : isLogoHovered || (hoveredLinkIndex !== null && hoveredLinkIndex !== index) 
+                            ? "text-neutral-500" 
+                            : "text-neutral-0"
+                        }`}
+                        onMouseEnter={() => setHoveredLinkIndex(index)}
+                        onMouseLeave={() => setHoveredLinkIndex(null)}
+                    >
+                        {link.text}
+                        <span 
+                        className={`absolute left-0 bottom-0 w-full h-0.5 bg-neutral-0 transform scale-x-0 transition-transform duration-300 ease-in-out origin-left ${
+                            hoveredLinkIndex === index ? "scale-x-100" : ""
+                        }`}
+                        />
+                    </Link>
+                    </React.Fragment>
+                ))}
                 </div>
 
                 <div className="border border-neutral-0 hover:border-[#434343] hover:bg-[#888888] min-w-[10rem] max-w-[10rem] rounded-full flex flex-shrink-0 justify-center items-center relative overflow-hidden group hover:cursor-pointer">
@@ -81,13 +89,13 @@ export default function Navigation() {
                                 opacity-0 group-hover:opacity-100 transition-opacity
                                 rounded-b-[20px] mb-[0.3px]"
                     />
-                    <div 
-                        className="absolute w-[10px] h-full rotate-[40deg] right-[45.359px] top-[-4.47px]
-                                rounded-[100px] bg-gradient-to-r from-[rgba(255,255,255,0)] from-[-47.55%] to-[rgba(0,0,0,0.8)] to-[99.44%]
-                                blur-[10px] opacity-0 group-hover:opacity-100 transition-opacity duration-300
-                                "
+                    <motion.div
+                        className="absolute w-[15px] h-full bg-gradient-to-r from-[rgba(255,255,255,0)] from-[-47.55%] to-[rgba(0,0,0,0.8)] to-[99.44%] blur-[10px]"
+                        initial={{ x: '-650%' }}
+                        animate={{ x: ['-650%', '300%', '-650%'], rotate: [60, 75, 65] }}
+                        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
                     />
-                    <span className="py-3 px-4 text-xl tracking-wide dm-sans text-neutral-0
+                    <span className="py-3 px-4 text-xl tracking-wide text-neutral-0
                                 relative z-10 group-hover:text-black transition-colors">
                         <span className="block group-hover:hidden font-normal">Let’s Talk!</span>
                         <span className="hidden group-hover:block font-medium">Talk with us!</span>

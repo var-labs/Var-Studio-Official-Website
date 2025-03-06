@@ -18,40 +18,12 @@ export default function ServiceSection() {
             <div className="grid grid-cols-2 gap-6 text-neutral-900 py-[5rem]">
                 <div className="flex w-full h-full relative">
                     <Image 
-                            src={"/folder-b.png"}
-                            alt=".."
-                            width={1000}
-                            height={1000}
-                            className="-scale-x-100"
-                    />
-                    <div className="absolute flex-col z-20 mt-8">
-                        <Image 
-                            src={"/folder-t.png"}
-                            alt="..."
-                            width={1000}
-                            height={1000}
-                            className="-scale-x-100"
-                        />
-                    </div>
-                    <div className="absolute z-40 flex flex-col w-full h-full pr-[3.25rem] pt-[50px]">
-                        <div className="flex flex-col gap-[5rem] mb-3 text-right items-end">
-                            <span className="text-[52px] uppercase">Site build</span>
-                            <span className="text-neutral-500 max-w-lg text-xl leading-description">Building robust digital foundations with precision and innovation, empowering seamless interactions and lasting impact.</span>
-                        </div>
-                        <div className="w-full h-full px-[54px] uppercase text-start text-xl underline underline-offset-2">
-                        see more details!
-                        </div>
-                    </div>
-                </div>
-
-                <div className="flex w-full h-full relative">
-                    <Image 
                         src={"/folder-b.png"}
                         alt=".."
                         width={1000}
                         height={1000}
                     />
-                    <div className="absolute z-20 mt-8">
+                    <div className="absolute z-20 mt-4">
                         <Image 
                             src={"/folder-t.png"}
                             alt="..."
@@ -61,9 +33,35 @@ export default function ServiceSection() {
                         />
                     </div>
                     <div className="absolute z-40 flex flex-col w-full h-full pl-[3.25rem] pt-[50px]">
-                        <div className="flex flex-col gap-[5rem] mb-3 items-start">
+                        <div className="flex flex-col gap-[4rem] mb-5 items-start">
                             <span className="text-[52px] uppercase">Site Design</span>
-                            <span className="text-neutral-500 max-w-lg text-xl leading-description">Shaping digital identities with captivating visuals and thoughtful design, creating experiences that connect and engage.</span>
+                            <span className="text-neutral-500 max-w-xl text-xl leading-description">Shaping digital identities with captivating visuals and thoughtful design, creating experiences that connect and engage.</span>
+                        </div>
+                        <div className="w-full h-full px-[54px] uppercase text-right text-xl underline underline-offset-2">
+                        see more details!
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex w-full h-full relative">
+                    <Image 
+                            src={"/folder-b.png"}
+                            alt=".."
+                            width={1000}
+                            height={1000}
+                    />
+                    <div className="absolute flex-col z-20 mt-4">
+                        <Image 
+                            src={"/folder-t.png"}
+                            alt="..."
+                            width={1000}
+                            height={1000}
+                        />
+                    </div>
+                    <div className="absolute z-40 flex flex-col w-full h-full pl-[3.25rem] pt-[50px]">
+                        <div className="flex flex-col gap-[4rem] mb-5 text-start items-start">
+                            <span className="text-[52px] uppercase">Site build</span>
+                            <span className="text-neutral-500 max-w-xl text-xl leading-description">Building robust digital foundations with precision and innovation, empowering seamless interactions and lasting impact.</span>
                         </div>
                         <div className="w-full h-full px-[54px] uppercase text-right text-xl underline underline-offset-2">
                         see more details!
