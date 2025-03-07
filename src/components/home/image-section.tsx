@@ -11,11 +11,11 @@ export default function ImageSection() {
     offset: ["start end", "end start"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 0.9, 1], [0.6, 1.16, 0.9]);
+  const scale = useTransform(scrollYProgress, [-1, 1, 1], [0.6, 1.22, 0.9]);
 
   return (
     <div ref={targetRef} className="relative h-[150vh]">
-      <div className="sticky top-0 flex items-center justify-center h-screen overflow-hidden">
+      <div className="sticky top-0 flex items-center justify-center h-screen max-h-[100vh]">
         <motion.div style={{ scale }} className="w-full h-full">
           <Image
             src="/imagesection.png"

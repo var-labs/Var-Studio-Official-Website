@@ -49,10 +49,36 @@ export default function LandingSection() {
                 ))}
             </div>
 
-            <div className="flex flex-col pt-16 px-[22rem] gap-10 -mb-[4rem]">
-                <span className="border border-neutral-900 w-[29rem]"></span>
-                <span className="dm-sans font-normal text-xl w-[70%] text-neutral-500 leading-description">At Var Studio, we bring your ideas to life with cutting-edge, tailored digital solutions—designed one var at a time.</span>
+            <div className="flex flex-col pt-16 px-[22rem] gap-10 -mb-[4rem] overflow-hidden">
+                <motion.span
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ 
+                    duration: 0.6, 
+                    ease: [0.25, 0.1, 0.25, 1],
+                    }}
+                    className="border border-neutral-900 w-[29rem] origin-left h-0.5 block"
+                />
+                
+                {/* Teks Deskripsi */}
+                <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0, width: '70%' }}
+                    transition={{ 
+                    duration: 0.8, 
+                    ease: 'easeOut',
+                    delay: 0.4,
+                    type: 'spring', // Menggunakan spring physics untuk animasi lebih alami
+                    stiffness: 80,
+                    damping: 12,
+                    }}
+                    className="dm-sans font-normal text-xl text-neutral-500 leading-description"
+                >
+                    At Var Studio, we bring your ideas to life with cutting-edge, 
+                    tailored digital solutions—designed one var at a time.
+                </motion.div>
             </div>
+            
             <div className="flex sticky bottom-0 pb-10 right-8 justify-end">
                 <Image 
                     src={"/ArrowDown.svg"}
